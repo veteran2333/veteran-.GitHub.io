@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登陆案例</title>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        /* #welcome {
+            margin: 100px 600px ;
+            color: snow;
+
+        } */
+        html,body {
+            width: 100%;
+            height: 100%;
+        }
+        .welcome {
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(45deg,#4a148c,#3949ab);
+        }
+        .welcome p {
+             
+            position: absolute;
+            left: 50%;
+            top: 35%;
+            font-size: 23px;
+            color: rgb(239, 246, 247);
+            transform: translate(-50%, -50%);
+            text-align: center;
+            line-height: 23px;
+        }
+        .login {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-image: linear-gradient(45dge,#0d021b,#2d46e9);
+            
+        }
+        .form {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 360px;
+            height: 290px;
+            transform: translate(-50%, -50%);
+            background-color: rgba(186, 183, 192, .7);
+            border-radius: 5px;
+
+        }
+        .form input {
+            width: 320px;
+            height: 40px;
+            display: block;
+            margin: 50px 20px 20px 20px;
+            padding-left: 8px;
+            font-weight: 700;
+            font-size: 20px;
+            font-family: '微软雅黑',' 宋体',' TimesNewRoman';
+            border-radius: 5px;
+            box-shadow: 2px,4px,8px,2px;
+
+        }
+        .form input:nth-child(3) {
+            width: 100px;
+            margin-left:240px ;
+            font-weight: 400;
+            padding-left: 0px;
+
+        }
+        .close-btn {
+            position: absolute;
+            right:20px ;
+            top: 20px;
+            font-size: 43px;
+            color: rgb(239, 246, 247);  
+        }
+        .hidden {
+            transition: transform 1s;
+            /* 平移变形 左侧 */
+            transform: translateX(-100%);
+        }
+        .show {
+            transition: transform 1s;
+            /* 平移变形 左侧 */
+            transform: translateX(0%);
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <div class="welcome">
+        <P>
+            <span class="fa fa-grav fa-5x" id="welcome"> <br> Welcome !</span>
+            
+        </P>
+    </div>
+    <div class="login hidden">
+        <span class="fa   fa-window-close fa-5x close-btn"></span>
+        <div class="form">
+            
+            <form action="">
+            <input type="text" placeholder="输入用户名">
+            <input type="password" placeholder="输入密码">
+            <input type="submit"value="登陆">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        var link_login = document.querySelector('.welcome p');
+        // 欢迎页面
+
+        var login_box = document.querySelector('.login');
+
+        // 登陆页面
+        var close_btn = document.querySelector('.close-btn');
+        // 返回页面
+        console.log(login_box);
+        //点击跳转登录按钮  让登录盒子回到0px
+        link_login.onclick = function () {
+            login_box.className = "login show";
+        }
+        close_btn.onclick = function(){
+            login_box.className = "login hidden";
+        }
+    </script>
+</body>
+</html>
